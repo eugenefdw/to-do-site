@@ -4,7 +4,7 @@
   "description": "website test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/eugenefdw/website#readme",
   "dependencies": {
-    "axios": "^0.19.0"
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "pg": "^7.14.0"
   },
-  "devDependencies": {
-    "axios": "^0.19.0"
-  }
+  "devDependencies": {}
 }

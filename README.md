@@ -1,12 +1,5 @@
 # website
-various attempts at getting a site to work within one month
+various attempts at getting a site to work within one month with bare minimum knowledge of full stack and js
 
 
-#### sites i looked at
-
-https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
-
-https://www.digitalocean.com/community/tutorials/how-to-use-node-js-modules-with-npm-and-package-json
-
-https://hassansaleh.info/p/3
-
+special thanks to [evan @DigiPie](https://github.com/DigiPie) for getting me on track
