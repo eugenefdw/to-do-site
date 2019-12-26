@@ -72,6 +72,8 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
+db.env
+server.env
 .env
 .env.test
 
