@@ -2,8 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 
-//const config = require('./config/config');
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -15,9 +13,10 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
+    
   };
   componentDidMount() {
-    axios.get('http://localhost:3000/api/tasks/').then(response => {
+    axios.get(`/api/tasks/`).then(response => {
       this.setState({ tasks: response.data })
     }).catch(err => console.error(err));
   };
@@ -27,7 +26,7 @@ class App extends React.Component {
     if (this.state.taskName === '' || this.state.taskName === null) {
       return;
     } else {
-      axios.put('http://localhost:3000/api/tasks/', { name: this.state.taskName }).then(response => {
+      axios.put(`/api/tasks/`, { name: this.state.taskName }).then(response => {
         this.setState(state => ({
           tasks: state.tasks.concat(response.data),
           taskName: '',
@@ -41,7 +40,7 @@ class App extends React.Component {
   };
 
   handleDelete(id) {
-    axios.delete(`http://localhost:3000/api/tasks/${id}`).then(response => {
+    axios.delete(`/api/tasks/${id}`).then(response => {
       if (response.data === 'OK') {
         this.setState(state => ({
           tasks: state.tasks.filter(task => task.task_id !== id)
@@ -51,7 +50,7 @@ class App extends React.Component {
   };
 
   handleToggle(task) {
-    axios.post(`http://localhost:3000/api/tasks/${task.task_id}`, { isDone: !task.is_done }).then(response => {
+    axios.post(`/api/tasks/${task.task_id}`, { isDone: !task.is_done }).then(response => {
       const updatedTask = response.data;
       this.setState(state => ({
         tasks: state.tasks.map(t => {
