@@ -17,10 +17,9 @@ class App extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
   };
   componentDidMount() {
-    axios.get('http://localhost:3000/api/tasks').then(response => {
+    axios.get('http://localhost:3000/api/tasks/').then(response => {
       this.setState({ tasks: response.data })
     }).catch(err => console.error(err));
-    console.log(this.state.tasks);
   };
 
   handleSubmit(e) {

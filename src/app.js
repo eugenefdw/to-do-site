@@ -96,7 +96,7 @@ app.put('/api/tasks/', function (req, res) {
   });
 });
 
-app.get('/api/tasks', function (req, res) {
+app.get('/api/tasks/', function (req, res) {
   getAllTasks(function (err, tasks) {
     if (err) {
       res.sendStatus(500);
